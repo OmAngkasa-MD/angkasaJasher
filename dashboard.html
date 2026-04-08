@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Dashboard Jasher Bot</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="dashboard">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="brand">
+      <h2>⚙️ Jasher Panel</h2>
+      <p class="muted" id="roleLabel">—</p>
+    </div>
+    <nav>
+      <button class="nav-btn active" data-page="groups">📋 Grup</button>
+      <button class="nav-btn" data-page="blacklist">🚫 Blacklist</button>
+      <button class="nav-btn" data-page="leaderboard">🏆 Leaderboard</button>
+      <div class="spacer"></div>
+      <button id="logoutBtn" class="danger">Logout</button>
+    </nav>
+  </aside>
+
+  <!-- Main content -->
+  <main class="content">
+    <header class="topbar">
+      <button id="menuToggle" class="hamburger">☰</button>
+      <h1 id="pageTitle">Daftar Grup</h1>
+      <span id="userLabel" class="muted"></span>
+    </header>
+
+    <!-- Pages -->
+    <section id="groups" class="page active">
+      <div id="groupsGrid" class="grid"></div>
+    </section>
+
+    <section id="blacklist" class="page">
+      <div class="card">
+        <div class="controls">
+          <input id="blkIdInput" placeholder="ID grup/user"/>
+          <input id="blkReasonInput" placeholder="Alasan (opsional)"/>
+          <button id="addBlacklistBtn">Tambah</button>
+        </div>
+        <ul id="blacklistList" class="list"></ul>
+      </div>
+    </section>
+
+    <section id="leaderboard" class="page">
+      <ol id="leaderboardList" class="leaderboard"></ol>
+    </section>
+  </main>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>

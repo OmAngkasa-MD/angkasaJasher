@@ -1,0 +1,245 @@
+:root {
+  --bg: #0b1220;
+  --card: #0f1724;
+  --accent: #7c3aed;
+  --accent-2: #5b21b6;
+  --muted: #94a3b8;
+  --text: #e6eef8;
+  --danger: #ef4444;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Inter, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ===================== Login Page ===================== */
+body.login-page {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  background: var(--card);
+  padding: 28px;
+  border-radius: 14px;
+  width: 360px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, .7);
+}
+
+.login-card input {
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, .04);
+  color: var(--text);
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 14px;
+}
+
+button {
+  background: var(--accent);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+button.ghost {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, .04);
+}
+
+.error {
+  color: var(--danger);
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+/* ===================== Dashboard ===================== */
+body.dashboard {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 220px;
+  background: var(--card);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 8px 0 30px rgba(2, 6, 23, .6);
+  transition: 0.3s;
+}
+
+.brand h2 {
+  color: var(--accent);
+}
+
+.nav-btn {
+  background: transparent;
+  color: var(--text);
+  border: none;
+  padding: 10px;
+  text-align: left;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.nav-btn.active {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: white;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.danger {
+  background: transparent;
+  color: var(--danger);
+  border: 1px solid rgba(239, 68, 68, .15);
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  overflow: auto;
+  position: relative;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.hamburger {
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-size: 24px;
+  cursor: pointer;
+  margin-right: 12px;
+}
+
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+.card {
+  background: var(--card);
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, .5);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.group-card {
+  background: rgba(255, 255, 255, .02);
+  padding: 12px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.meta {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.small-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, .04);
+  padding: 6px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.small-btn.danger {
+  background: rgba(239, 68, 68, .08);
+  border-color: rgba(239, 68, 68, .12);
+  color: var(--danger);
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .01);
+}
+
+.leaderboard {
+  padding-left: 20px;
+}
+
+input {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, .04);
+  background: transparent;
+  color: var(--text);
+  margin-right: 6px;
+}
+
+@media (max-width: 800px) {
+  .sidebar {
+    position: fixed;
+    left: -240px;
+    top: 0;
+    height: 100%;
+    z-index: 999;
+  }
+  .sidebar.show {
+    left: 0;
+  }
+  .content {
+    padding: 12px;
+  }
+}
